@@ -8,8 +8,7 @@
   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
     <% for(let listing of allListings){ %>
     <div class="card col" style="width: 18rem">
-      <!-- <img src="<%=listing.image.url %>" class="card-img-top" alt="listing_image" /> -->
-       <img src="<%= listing.image?.url || 'https://unsplash.com/photos/a-rainbow-arches-over-a-majestic-mountain-landscape-vwFvhJf6u_I' %>" class="card-img-top" />
+      <img src="<%=listing.image.url %>" class="card-img-top" alt="listing_image" />
       <div class="card-body">
         <p class="card-text">
           <%= listing.title %>
@@ -18,8 +17,6 @@
           <br>
           <%= listing.description %>
         </p>
-        <!-- <%= JSON.stringify(listing) %> -->
-         <!-- <pre><%= JSON.stringify(listing.image, null, 2) %></pre> -->
       </div>
     </div>
     <% } %>
