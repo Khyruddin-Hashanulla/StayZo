@@ -8,6 +8,7 @@ const ejsMate = require("ejs-mate");
 const Listing = require("./Models/listing.js");
 const wrapAsync = require("./Utils/wrapAsync.js");
 const ExpressError = require("./Utils/ExpressError.js");
+const { listingSchema } = require("./schema.js");
 
 // Connect to DB
 
@@ -88,8 +89,10 @@ app.get(
 app.post(
   "/listings",
   wrapAsync(async (req, res, next) => {
-    if (!req.body.listing) {
-      throw new ExpressError(400, "Send valid data for listing");
+    let result = listingSchema.validate(req.body);
+    // console.log(result);
+    if (result.error) {
+      throw new ExpressError(400, result.error);
     }
     const newListing = new Listing(req.body.listing);
     await newListing.save();
@@ -118,7 +121,7 @@ app.delete(
   wrapAsync(async (req, res) => {
     let { id } = req.params;
     let deletedListing = await Listing.findByIdAndDelete(id);
-    console.log(deletedListing);
+    // console.log(deletedListing);
     res.redirect("/listings");
   })
 );
