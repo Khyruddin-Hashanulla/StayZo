@@ -123,3 +123,49 @@ body {
   height: 400px;
   width: 80vh;
 }
+
+/* FILTER  */
+
+#filters {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+#filters::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari */
+}
+
+.filter {
+  padding-top: 0.5rem;
+  min-width: 3.2rem;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.sticky-filters {
+  position: sticky;
+  top: 5rem;
+  z-index: 1;
+  background-color: white; /* important for overlay look */
+}
+
+/* Display Taxes Toggle Styling */
+.tax-toggle {
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 3.25rem;
+  min-width: max-content;
+  white-space: nowrap;
+}

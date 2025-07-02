@@ -21,7 +21,9 @@ const userRouter = require("./Routes/user.js");
 
 // Connect to DB
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/StayZo";
+// const MONGO_URL = "mongodb://127.0.0.1:27017/StayZo";
+const dbUrl = process.env.ATLASDB_URL;
+
 main()
   .then(() => {
     console.log("Connected to DB..");
@@ -31,7 +33,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(dbUrl);
 }
 
 // Set EJS view engine and views folder
