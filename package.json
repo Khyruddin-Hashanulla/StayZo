@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Khyruddin Hashanulla",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.16.1",
     "cloudinary": "^2.7.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.7",
-    "dotenv": "^17.0.0",
+    "dotenv": "^17.0.1",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^4.21.2",
