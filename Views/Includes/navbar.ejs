@@ -22,15 +22,9 @@
     min-width: 200px;
   }
 
-  @media (max-width: 576px) {
-    .search-inp {
-      min-width: 120px;
-      font-size: 0.9rem;
-    }
-
-    .search-btn {
-      font-size: 0.9rem;
-      padding: 0 0.75rem;
+  @media (max-width: 767px) {
+    .container-fluid {
+      background-color: #fff;
     }
   }
 </style>
@@ -55,11 +49,11 @@
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="d-md-flex w-100 justify-content-between align-items-center">
-        <div class="navbar-nav">
+        <div class="navbar-nav" id="left-nav">
           <a class="nav-link" href="/listings">Explore</a>
         </div>
 
-        <form class="d-flex my-2 my-md-0" role="search">
+        <form class="d-flex my-2 my-md-0" role="search" id="nav-search">
           <input
             class="form-control search-inp me-2"
             type="search"
@@ -70,7 +64,7 @@
           </button>
         </form>
 
-        <div class="navbar-nav">
+        <div class="navbar-nav" id="right-nav">
           <a class="nav-link" href="/listings/new">Your home</a>
           <% if (!currUser) { %>
           <a class="nav-link" href="/signup"><b>Sign up</b></a>

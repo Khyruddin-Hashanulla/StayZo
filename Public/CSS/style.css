@@ -24,6 +24,7 @@ body {
   color: #222222 !important;
 }
 
+
 /* FOOTER */
 
 .f-info-links a {
@@ -120,8 +121,10 @@ body {
 /* MAP */
 
 #map {
-  height: 400px;
-  width: 80vh;
+  width: 80vh;          /* Fills its column */
+  height: 50vh;         /* Responsive height based on viewport */
+  max-width: 100%;      /* Prevents overflow */
+  border-radius: 8px;   /* Optional: Looks nicer */
 }
 
 /* FILTER  */
@@ -157,10 +160,11 @@ body {
   position: sticky;
   top: 5rem;
   z-index: 1;
-  background-color: white; /* important for overlay look */
+  background-color: white;
 }
 
-/* Display Taxes Toggle Styling */
+/* TOGGLE */
+
 .tax-toggle {
   border: 1px solid #ccc;
   border-radius: 1rem;
