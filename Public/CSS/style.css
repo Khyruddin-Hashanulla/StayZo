@@ -24,7 +24,6 @@ body {
   color: #222222 !important;
 }
 
-
 /* FOOTER */
 
 .f-info-links a {
@@ -91,10 +90,6 @@ body {
   background-color: white;
 }
 
-/* RATING  */
-
-
-
 /* NEW PAGE */
 
 .add-btn {
@@ -112,7 +107,9 @@ body {
 /* SHOW PAGE */
 
 .show-img {
-  height: 30vh;
+  height: 50vh !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
 .btns {
   display: flex;
@@ -125,10 +122,10 @@ body {
 /* MAP */
 
 #map {
-  width: 80vh;          /* Fills its column */
-  height: 50vh;         /* Responsive height based on viewport */
-  max-width: 100%;      /* Prevents overflow */
-  border-radius: 8px;   /* Optional: Looks nicer */
+  width: 80vh; /* Fills its column */
+  height: 50vh; /* Responsive height based on viewport */
+  max-width: 100%; /* Prevents overflow */
+  border-radius: 8px; /* Optional: Looks nicer */
 }
 
 /* FILTER  */
@@ -146,7 +143,7 @@ body {
 .filter {
   padding-top: 0.5rem;
   min-width: 3.2rem;
-  opacity: 0.6;
+  opacity: 0.7;
   transition: 0.2s;
 }
 

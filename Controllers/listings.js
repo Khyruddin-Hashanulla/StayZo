@@ -3,6 +3,32 @@ const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
+// "/search" ROUTE
+module.exports.searchListings = async (req, res) => {
+  const { category, query, minPrice, maxPrice } = req.query;
+  const filter = {};
+
+  if (category) filter.category = category;
+
+  if (query) {
+    const regex = new RegExp(query, "i");
+    filter.$or = [
+      { title: regex },
+      { location: regex },
+      { description: regex },
+    ];
+  }
+
+  if (minPrice || maxPrice) {
+    filter.price = {};
+    if (minPrice) filter.price.$gte = parseInt(minPrice);
+    if (maxPrice) filter.price.$lte = parseInt(maxPrice);
+  }
+
+  const allListings = await Listing.find(filter);
+  res.render("Listings/index", { allListings });
+};
+
 module.exports.index = async (req, res) => {
   const allListings = await Listing.find({});
   res.render("listings/index", { allListings });
@@ -42,6 +68,7 @@ module.exports.createListing = async (req, res, next) => {
   newListing.geometry = response.body.features[0].geometry;
 
   let saveListing = await newListing.save();
+
   // console.log(saveListing);
 
   req.flash("success", "New Listing Created!");

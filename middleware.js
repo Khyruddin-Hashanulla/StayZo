@@ -1,7 +1,7 @@
 const Listing = require("./Models/listing");
 const Review = require("./Models/review");
 const ExpressError = require("./Utils/ExpressError.js");
-const { listingSchema, reviewSchema } = require("./schema.js");
+const { listingSchema, reviewSchema } = require("./Utils/schema.js");
 
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
