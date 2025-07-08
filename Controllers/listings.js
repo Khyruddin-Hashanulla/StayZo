@@ -19,11 +19,11 @@ module.exports.searchListings = async (req, res) => {
     ];
   }
 
-  if (minPrice || maxPrice) {
-    filter.price = {};
-    if (minPrice) filter.price.$gte = parseInt(minPrice);
-    if (maxPrice) filter.price.$lte = parseInt(maxPrice);
-  }
+  // if (minPrice || maxPrice) {
+  //   filter.price = {};
+  //   if (minPrice) filter.price.$gte = parseInt(minPrice);
+  //   if (maxPrice) filter.price.$lte = parseInt(maxPrice);
+  // }
 
   const allListings = await Listing.find(filter);
   res.render("listings/index", { allListings });

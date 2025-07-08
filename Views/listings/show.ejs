@@ -8,7 +8,7 @@
 <div class="container-fluid px-3 px-md-4">
   <div class="row mt-3">
     <div class="col-12 col-md-8 offset-md-2 mb-4">
-      <h3 class="text-break"><%= listing.title %></h3>
+      <h2 class="text-break"><b><%= listing.title %></b></h2>
     </div>
 
     <div class="col-12 col-md-8 offset-md-2 mb-4">
@@ -20,7 +20,9 @@
         />
         <div class="card-body">
           <div class="card-text">
-            <p>Owned by <i><%= listing.owner.username %></i></p>
+            <p>
+              Owned by <b><i><%= listing.owner.username %></i></b>
+            </p>
             <p class="text-break"><%= listing.description %></p>
             <p>&#8377;<%= listing.price.toLocaleString("en-IN") %></p>
             <p class="text-break"><%= listing.location %></p>
