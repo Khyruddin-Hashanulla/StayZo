@@ -8,7 +8,7 @@ StayZo is a full-stack property rental platform where users can create, manage, 
 
 ## 🚀 Live Demo
 
-🌍 [StayZo on Render](comming soon)
+🌍 https://stayzo-46kr.onrender.com
 
 > Try creating an account, adding a listing with an image, and testing out the search features!
 
